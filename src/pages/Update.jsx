@@ -27,6 +27,7 @@ const Update = () => {
       setUpdateValue(singleUser[0]);
     }
   }, []);
+  console.log("---");
 
   const handleSubmit = (e) => {
     e.preventDefault();
