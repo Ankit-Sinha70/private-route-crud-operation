@@ -38,7 +38,9 @@ const Home = () => {
           width: "40%",
           backgroundColor: "#d7dad8",
           borderRadius: "30px",
-          boxShadow: "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"
+          // boxShadow:
+          //   "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset",
+          boxShadow: "rgba(0, 0, 0, 0.66) 0px 22px 70px 4px"
         }}
       >
         <Heading as={"h6"} size={"lg"} textAlign={"center"}>
@@ -48,6 +50,7 @@ const Home = () => {
           <form onSubmit={handleSubmit}>
             <FormLabel>Name</FormLabel>
             <Input
+              required
               variant="flushed"
               type="text"
               name="name"
@@ -59,8 +62,9 @@ const Home = () => {
             <br />
             <FormLabel>Email</FormLabel>
             <Input
+              required
               variant="flushed"
-              type="text"
+              type="email"
               name="email"
               value={input.email}
               placeholder="Enter User email"
@@ -68,7 +72,9 @@ const Home = () => {
             />
             <br />
             <br />
-            <Button colorScheme="teal" type="submit">Add User</Button>
+            <Button colorScheme="teal" type="submit">
+              Add User
+            </Button>
           </form>
         </Box>
       </Box>

@@ -5,7 +5,7 @@ export const createUserlist = createAsyncThunk(
   "createUserlist",
   async (data) => {
     const response = await fetch(
-      "https://64ae452bc85640541d4cb798.mockapi.io/crud",
+      import.meta.env.VITE_APP_API_URL,
       {
         method: "POST",
         headers: {
@@ -27,7 +27,7 @@ export const createUserlist = createAsyncThunk(
 
 export const displayUserData = createAsyncThunk("displayUserData", async () => {
   const response = await fetch(
-    "https://64ae452bc85640541d4cb798.mockapi.io/crud"
+    import.meta.env.VITE_APP_API_URL
   );
   try {
     const result = await response.json();
@@ -41,7 +41,7 @@ export const displayUserData = createAsyncThunk("displayUserData", async () => {
 
 export const deleteUserList = createAsyncThunk("deleteUserList", async (id) => {
   const response = await fetch(
-    `https://64ae452bc85640541d4cb798.mockapi.io/crud/${id}`,
+    `${import.meta.env.VITE_APP_API_URL}/${id}`,
     {
       method: "DELETE",
     }
@@ -59,7 +59,7 @@ export const deleteUserList = createAsyncThunk("deleteUserList", async (id) => {
 export const UpdateUserList = createAsyncThunk(
   "UpdateUserList", async (data) => {
     const response = await fetch(
-      `https://64ae452bc85640541d4cb798.mockapi.io/crud/${data.id}`,
+      `${import.meta.env.VITE_APP_API_URL}/${data.id}`,
       {
         method: "PUT",
         headers: {

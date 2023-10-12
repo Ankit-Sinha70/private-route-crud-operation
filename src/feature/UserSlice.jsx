@@ -24,7 +24,7 @@ export const userSlice = createSlice({
       .addCase(createUserlist.fulfilled, (state, action) => {
         state.loading = false;
         state.isSuccess = true;
-        state.users = [action.payload, ...state.users];
+        state.users.unshift(action.payload);
       })
       .addCase(createUserlist.rejected, (state, action) => {
         state.loading = false;
